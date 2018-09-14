@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.1.1" />
+    <PackageReference Include="surging" Version="0.9.0.4" />
+    <PackageReference Include="Surging.Core.Caching" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.Codec.MessagePack" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.Codec.ProtoBuffer" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.Consul" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.DotNetty" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.EventBusKafka" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.EventBusRabbitMQ" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.Log4net" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.Nlog" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.Protocol.Http" Version="0.9.0.2" />
+    <PackageReference Include="Surging.Core.Zookeeper" Version="0.9.0.2" />
+    <PackageReference Include="Surging.WebSocketCore" Version="1.9.1" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\surgingDemo.Data\surgingDemo.Data.csproj" />
+    <ProjectReference Include="..\surgingDemo.IModuleServices.UserManager\surgingDemo.IModuleServices.UserManager.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="cacheSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="eventBusSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="surgingSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
