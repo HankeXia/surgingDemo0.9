@@ -29,10 +29,14 @@
   <ItemGroup>
     <ProjectReference Include="..\surgingDemo.Data\surgingDemo.Data.csproj" />
     <ProjectReference Include="..\surgingDemo.IModuleServices.UserManager\surgingDemo.IModuleServices.UserManager.csproj" />
+    <ProjectReference Include="..\surgingDemo.Modules.UserManager\surgingDemo.Modules.UserManager.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="cacheSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Dockerfile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="eventBusSettings.json">

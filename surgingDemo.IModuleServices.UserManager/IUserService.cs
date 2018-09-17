@@ -14,9 +14,8 @@ namespace surgingDemo.IModuleServices.UserManager
     public interface IUserService : IServiceKey
     {
 
-        [Command(ShuntStrategy = AddressSelectorMode.HashAlgorithm)]
-        Task<List<Users>> GetUsers();
-        [Command(ShuntStrategy = AddressSelectorMode.HashAlgorithm)]
+        Task<List<Users>> GetUsersAsync();
+
         Task<int> AddUser(Users users);
     }
 }

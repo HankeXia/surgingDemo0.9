@@ -16,23 +16,31 @@ namespace surgingDemo.Modules.UserManager.Repositories
         /// </summary>
         /// <param name="users"></param>
         /// <returns></returns>
-        public Task<int> Add(Users users)
+        public async Task<int> AddAsync(Users users)
         {
             using (var db = new testContext())
             {
                 db.Users.Add(users);
-                return db.SaveChangesAsync();
+                return await db.SaveChangesAsync();
             }
         }
         /// <summary>
         /// 获取所有用户
         /// </summary>
         /// <returns></returns>
-        public Task<List<Users>> GetUsers()
+        public List<Users> GetUsers()
         {
             using (var db = new testContext())
             {
-                return db.Users.AsNoTracking().ToListAsync();
+                return db.Users.AsNoTracking().ToList();
+            }
+        }
+
+        public async Task<List<Users>> GetUsersAsync()
+        {
+            using (var db = new testContext())
+            {
+                return await db.Users.AsNoTracking().ToListAsync();
             }
         }
     }

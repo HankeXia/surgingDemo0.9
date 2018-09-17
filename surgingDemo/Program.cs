@@ -22,24 +22,31 @@ namespace surgingDemo.Sevices.server
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             var host = new ServiceHostBuilder()
-                .RegisterServices(builder =>
-                {
-                    builder.AddMicroService(option =>
-                    {
-                        option.AddClient()
-                        .AddCache();
-                        builder.Register(p => new CPlatformContainer(ServiceLocator.Current));
-                    });
-                })
-                .Configure(build =>
-                build.AddCacheFile("cacheSettings.json", optional: false, reloadOnChange: true))
-                .Configure(build =>
-                build.AddCPlatformFile("${surgingpath}|surgingSettings.json", optional: false, reloadOnChange: true))
-                .UseNLog(LogLevel.Error)
-                .UseClient()
-                .UseConsoleLifetime()
-                .UseStartup<Startup>()
-                .Build();
+               .RegisterServices(builder =>
+               {
+                   builder.AddMicroService(option =>
+                   {
+                       option.AddServiceRuntime()
+                       .AddRelateService()
+                       .AddConfigurationWatch();
+                       //option.UseZooKeeperManager(new ConfigInfo("127.0.0.1:2181")); 
+                       //.AddServiceEngine(typeof(SurgingServiceEngine));
+                       builder.Register(p => new CPlatformContainer(ServiceLocator.Current));
+                   });
+               })
+               .ConfigureLogging(logger =>
+               {
+                   logger.AddConfiguration(
+                       Surging.Core.CPlatform.AppConfig.GetSection("Logging"));
+               })
+               .UseServer(options => { })
+               .UseConsoleLifetime()
+               .Configure(build =>
+               build.AddCacheFile("${cachepath}|cacheSettings.json", optional: false, reloadOnChange: true))
+                 .Configure(build =>
+               build.AddCPlatformFile("${surgingpath}|surgingSettings.json", optional: false, reloadOnChange: true))
+               .UseStartup<Startup>()
+               .Build();
             //在启动的时候吧连接字符串赋值
             testContext.ConnectionString = Surging.Core.CPlatform.AppConfig.GetSection("ConnectionStrings").GetSection("SqlServerStr").Value;
             using (host.Run())
