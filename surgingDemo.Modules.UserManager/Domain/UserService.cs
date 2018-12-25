@@ -16,16 +16,16 @@ namespace surgingDemo.Modules.UserManager.Domain
         {
             _usersRepository = usersRepository;
         }
-        public Task<int> AddUser(Users users)
+        public async Task<int> AddUser(Users users)
         {
-            return _usersRepository.AddAsync(users);
+            return await _usersRepository.AddAsync(users);
         }
 
-        public Task<List<Users>> GetUsersAsync()
+        public async Task<List<Users>> GetUsersAsync()
         {
             //return Task.FromResult(new List<Users> { new Users { CreateDate = DateTime.Now, Id = 1, Name = "123", Sex = "男" } });
             //var list = _usersRepository.GetUsers();
-            return _usersRepository.GetUsersAsync();
+            return await _usersRepository.GetUsersAsync();
         }
     }
 }
