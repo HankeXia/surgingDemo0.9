@@ -28,9 +28,9 @@ namespace surgingDemo.Sevices.server
                    {
                        option.AddServiceRuntime()
                        .AddRelateService()
-                       .AddConfigurationWatch();
+                       .AddConfigurationWatch()
                        //option.UseZooKeeperManager(new ConfigInfo("127.0.0.1:2181")); 
-                       //.AddServiceEngine(typeof(SurgingServiceEngine));
+                       .AddServiceEngine(typeof(SurgingServiceEngine));
                        builder.Register(p => new CPlatformContainer(ServiceLocator.Current));
                    });
                })

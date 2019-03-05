@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>surgingDemo.Sevices.server</name>
+    </assembly>
+    <members>
+        <member name="M:surgingDemo.Sevices.server.Startup.ConfigureLogging(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置日志服务
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:surgingDemo.Sevices.server.Startup.ConfigureCache(Microsoft.Extensions.Configuration.IConfigurationBuilder)">
+            <summary>
+            配置缓存服务
+            </summary>
+        </member>
+    </members>
+</doc>

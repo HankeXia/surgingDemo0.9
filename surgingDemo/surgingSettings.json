@@ -1,6 +1,6 @@
 {
   "Surging": {
-    "Ip": "${Surging_Server_IP}|10.40.140.226",
+    "Ip": "${Surging_Server_IP}|0.0.0.0",
     "WatchInterval": 30,
     "Port": "${Surging_Server_Port}|99",
     "MappingIp": "${Mapping_ip}",
@@ -23,10 +23,24 @@
     ]
   }, //如果引用多个同类型的组件，需要配置Packages，如果是自定义按需引用，无需配置Packages
   "Consul": {
-    "ConnectionString": "${Register_Conn}|192.168.56.2:8500", // "127.0.0.1:8500",
+    "ConnectionString": "${Register_Conn}|127.0.0.1:8500",
     "SessionTimeout": "${Register_SessionTimeout}|50",
     "RoutePath": "${Register_RoutePath}",
     "ReloadOnChange": true
+  },
+  "Swagger": {
+    "Version": "${SwaggerVersion}|V1",
+    "Title": "${SwaggerTitle}|Surging Demo",
+    "Description": "${SwaggerDes}|surging demo",
+    "Contact": {
+      "Name": "API Support",
+      "Url": "https://github.com/dotnetcore/surging",
+      "Email": "fanliang1@hotmail.com"
+    },
+    "License": {
+      "Name": "MIT",
+      "Url": "https://github.com/dotnetcore/surging/blob/master/LICENSE"
+    }
   },
   "EventBus_Kafka": {
     "Servers": "${EventBusConnection}|localhost:9092",
@@ -38,7 +52,7 @@
     "GroupID": "${EventBusGroupID}|surgingdemo"
   },
   "EventBus": {
-    "EventBusConnection": "${EventBusConnection}|192.168.56.2",
+    "EventBusConnection": "${EventBusConnection}|127.0.0.1",
     "EventBusUserName": "${EventBusUserName}|guest",
     "EventBusPassword": "${EventBusPassword}|guest",
     "VirtualHost": "${VirtualHost}|/",

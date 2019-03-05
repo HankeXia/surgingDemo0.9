@@ -2,27 +2,32 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>F:\Project\Demo\surgingDemo\surgingDemo\surgingDemo\surgingDemo.Sevices.server.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.1.1" />
-    <PackageReference Include="surging" Version="0.9.0.4" />
-    <PackageReference Include="Surging.Core.Caching" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.Codec.MessagePack" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.Codec.ProtoBuffer" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.Consul" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.DotNetty" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.EventBusKafka" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.EventBusRabbitMQ" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.Log4net" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.Nlog" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.Protocol.Http" Version="0.9.0.2" />
-    <PackageReference Include="Surging.Core.Zookeeper" Version="0.9.0.2" />
-    <PackageReference Include="Surging.WebSocketCore" Version="1.9.1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
+    <PackageReference Include="surging" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.Caching" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.Codec.MessagePack" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.Codec.ProtoBuffer" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.Consul" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.DotNetty" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.EventBusKafka" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.EventBusRabbitMQ" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.KestrelHttpServer" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.Log4net" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.Nlog" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.Protocol.Http" Version="1.0.0" />
+    <PackageReference Include="Surging.Core.Zookeeper" Version="1.0.0" />
+    <PackageReference Include="Surging.WebSocketCore" Version="1.9.2" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.0" />
   </ItemGroup>
 
